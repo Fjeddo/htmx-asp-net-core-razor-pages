@@ -1,0 +1,18 @@
+﻿@page "{id}/{action=view}"
+@model With.ASP.NET.RazorPages.Pages.Examples.ClickToEdit.ContactModel
+@{
+    Layout = null;
+    var action = Request.RouteValues["action"]!.ToString();
+}
+
+@switch (action)
+{
+    case "edit":
+        @await Html.PartialAsync("_ContactEdit", Model)
+        break;
+    case "view":
+        @await Html.PartialAsync("_ContactView", Model)
+        break;
+    default:
+        throw new NotSupportedException($"Action '{action}' not supported");
+}
