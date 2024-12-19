@@ -1,0 +1,14 @@
+﻿@page "{currentPage=1}"
+@model With.ASP.NET.RazorPages.Pages.Examples.ClickToLoad.AgentsModel
+@{
+    Layout = null;
+}
+
+<table>
+    <thead>
+        <tr><th>Name</th><th>Email</th><th>ID</th></tr>
+    </thead>
+    <tbody>
+        @await Html.PartialAsync("_PagedAgents", (Model.InitialAgents, 1))
+    </tbody>
+</table>

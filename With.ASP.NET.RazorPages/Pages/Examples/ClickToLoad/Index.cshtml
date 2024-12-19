@@ -1,0 +1,7 @@
+﻿@page
+@model With.ASP.NET.RazorPages.Pages.Examples.ClickToLoad.IndexModel
+
+<div hx-trigger="load"
+     hx-get="@Url.PageLink("Agents")"
+     hx-swap="outerHTML">
+</div>

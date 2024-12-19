@@ -1,0 +1,18 @@
+﻿@model (Data.Agent[] Agents, int Page)
+
+@foreach (var agent in Model.Agents)
+{
+    <tr><td>@agent.Name</td><td>@agent.Email</td><td>@agent.ID</td></tr>
+}
+
+<tr id="replaceMe">
+    <td colspan="3">
+        <center>
+            <button class='btn primary' hx-get="@Url.PageLink("Agents", values: new { currentPage = Model.Page + 1 })"
+                    hx-target="#replaceMe"
+                    hx-swap="outerHTML">
+                Load More Agents...
+            </button>
+        </center>
+    </td>
+</tr>
