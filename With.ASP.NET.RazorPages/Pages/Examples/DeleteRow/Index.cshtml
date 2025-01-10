@@ -1,0 +1,9 @@
+﻿@page
+@model With.ASP.NET.RazorPages.Pages.Examples.DeleteRow.IndexModel
+
+<div hx-trigger="load"
+     hx-get="@Url.PageLink("People")"
+     hx-swap="outerHTML">
+</div>
+
+<partial name="_AntiForgery"/>

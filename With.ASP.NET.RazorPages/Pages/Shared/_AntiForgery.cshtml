@@ -1,0 +1,15 @@
+﻿<meta name="htmx-config" includeAspNetAntiforgeryToken="true" />
+
+<script>
+    document.addEventListener("htmx:configRequest", evt => {
+        if (evt.detail.verb.toUpperCase() === 'GET') {
+            return;
+        }
+
+        const antiForgery = htmx.config.antiForgery;
+
+        if (antiForgery && antiForgery.headerName) {
+                evt.detail.headers[antiForgery.headerName] = antiForgery.requestToken;
+        }
+    });
+</script>
