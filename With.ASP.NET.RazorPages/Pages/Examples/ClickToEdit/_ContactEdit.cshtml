@@ -22,6 +22,4 @@
     <button type="submit">Submit</button>
     <button hx-get="@Url.PageLink("Contact", values: new {id = Model.ContactInfo!.ID, action = "view"})">Cancel</button>
 
-    @Html.AntiForgeryToken()
-
 </form>
