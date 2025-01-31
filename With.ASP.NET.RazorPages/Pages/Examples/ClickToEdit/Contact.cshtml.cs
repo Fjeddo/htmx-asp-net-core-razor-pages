@@ -8,9 +8,7 @@ public class ContactModel : PageModel
 {
     public ContactInfo? ContactInfo { get; set; }
 
-    public void OnGet(int id) 
-        => ContactInfo ??= Db.Contacts.FirstOrDefault(x => x.ID == id);
+    public void OnGet(int id) => ContactInfo ??= Db.Contacts.FirstOrDefault(x => x.ID == id);
 
-    public void OnPut([FromForm] ContactInfo contactInfo)
-        => ContactInfo ??= Db.Upsert(contactInfo);
+    public void OnPut([FromForm] ContactInfo contactInfo) => ContactInfo ??= Db.Upsert(contactInfo);
 }

@@ -6,9 +6,9 @@ public class Agent
     public string Email { get; init; }
     public string ID { get; init; }
 
-    public static Agent[] CreateAgents(int page)
+    public static Agent[] GetAgents(int page)
     {
-        return Enumerable.Range(page * 10, 10)
+        return Enumerable.Range((page + 1) * 10, 10)
             .Select(x =>
                 new Agent
                 {
