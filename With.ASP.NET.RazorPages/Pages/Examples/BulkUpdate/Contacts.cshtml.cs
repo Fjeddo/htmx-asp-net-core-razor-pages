@@ -9,8 +9,6 @@ public class ContactsModel : PageModel
 {
     public List<Contact> Contacts { get; set; } = Db.Contacts;
 
-    public void OnGet() { }
-
     public IActionResult OnPost()
     {
         if (Request.IsHtmx())

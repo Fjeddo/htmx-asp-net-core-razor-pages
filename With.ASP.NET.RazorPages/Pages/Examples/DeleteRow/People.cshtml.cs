@@ -8,11 +8,9 @@ public class PeopleModel : PageModel
 {
     public List<Person> People { get; set; } = Db.People;
 
-    public void OnGet() { }
-
     public IActionResult OnDelete(int id)
     {
         Db.People.RemoveAll(x => x.Id == id);
         return Partial("_Empty");
-        ;        }
+    }
 }

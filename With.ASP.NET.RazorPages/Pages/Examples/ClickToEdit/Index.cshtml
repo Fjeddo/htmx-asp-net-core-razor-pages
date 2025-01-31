@@ -1,7 +1,4 @@
 ﻿@page "{id=1}" 
-@* fallback to id=1 *@
-
-@model With.ASP.NET.RazorPages.Pages.Examples.ClickToEdit.IndexModel
 
 <div hx-trigger="load"
      hx-get="@Url.PageLink("Contact", values: new {id = Request.RouteValues["id"]})"
