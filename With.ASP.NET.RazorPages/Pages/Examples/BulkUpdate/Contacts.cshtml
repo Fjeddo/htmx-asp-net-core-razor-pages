@@ -19,23 +19,27 @@
         <tbody id="tbody">
             @foreach (var contact in Model.Contacts)
             {
-                @await Html.PartialAsync("_Contact", contact)
+                <tr>
+                    <td>@contact.Name</td>
+                    <td>@contact.Email</td>
+                    <td><input type="checkbox" @(contact.Active ? "checked=checked" : "") name="active_@(contact.Email)"></td>
+                </tr>
             }
         </tbody>
     </table>
     <input type="submit" value="Bulk Update">
 
-    <style type="text/css">
-        #toast.htmx-settling {
-            opacity: 100;
-        }
-
-        #toast {
-            background: #FC6A03;
-            opacity: 0;
-            transition: opacity 3s ease-out;
-        }
-    </style>
-    
     <span id="toast"></span>
 </form>
+
+<style type="text/css">
+    #toast.htmx-settling {
+        opacity: 100;
+    }
+
+    #toast {
+        background: #FC6A03;
+        opacity: 0;
+        transition: opacity 3s ease-out;
+    }
+</style>

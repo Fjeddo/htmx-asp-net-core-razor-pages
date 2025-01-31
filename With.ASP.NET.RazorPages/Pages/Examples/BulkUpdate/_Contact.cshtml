@@ -1,7 +1,0 @@
-﻿@model Data.Contact
-
-<tr>
-    <td>@Model.Name</td>
-    <td>@Model.Email</td>
-    <td><input type="checkbox" @(Model.Active ? "checked=checked" : "") name="active_@(Model.Email)"></td>
-</tr>
