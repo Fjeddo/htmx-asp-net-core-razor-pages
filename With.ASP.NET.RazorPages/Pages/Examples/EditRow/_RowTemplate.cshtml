@@ -1,0 +1,13 @@
+﻿@model With.ASP.NET.RazorPages.Pages.Examples.EditRow.Data.Person
+
+<tr>
+    <td>@Model.Name</td>
+    <td>@Model.Email</td>
+    <td>
+        <button hx-get="@Url.PageLink("People", values: new {id = Model.Id, action = "edit"})"
+                hx-trigger="edit"
+                onclick="confirmEdit(this)">
+            Edit
+        </button>
+    </td>
+</tr>
