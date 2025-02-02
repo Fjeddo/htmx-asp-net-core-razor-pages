@@ -1,0 +1,35 @@
+﻿@page
+
+<div hx-trigger="load"
+     hx-get="@Url.Page("People")"
+     hx-swap="outerHTML">
+</div>
+
+<partial name="_AntiForgery" />
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="text/javascript">
+    function confirmEdit(el) {
+        let self = el
+        let editing = document.querySelector('.editing')
+        if (editing) {
+            Swal.fire({
+                title: 'Already Editing',
+                showCancelButton: true,
+                confirmButtonText: 'Yep, Edit This Row!',
+                text: 'Hey! You are already editing a row! Do you want to cancel that edit and continue?',
+                showClass: {
+                    popup: ''
+                }
+            })
+                .then((result) => {
+                    if (result.isConfirmed) {
+                        htmx.trigger(editing, 'cancel')
+                        htmx.trigger(self, 'edit')
+                    }
+                })
+        } else {
+            htmx.trigger(self, 'edit')
+        }
+    }
+</script>
