@@ -1,0 +1,12 @@
+﻿@page
+@model With.ASP.NET.RazorPages.Pages.Examples.LazyLoadingWithSkeleton.ResultModel
+@{
+    Layout = null;
+}
+
+<div role="status" class="mt-3">
+    <div class="h-2.5 w-72 mb-6">This is some server information</div>
+    <div class="h-2 max-w-[640px] mb-4">The server date is at the moment: @DateTime.Now.ToString("D")</div>
+    <div class="h-2 mb-4">Server local time is at the moment: @DateTime.Now.ToString("T")</div>
+</div>
+
