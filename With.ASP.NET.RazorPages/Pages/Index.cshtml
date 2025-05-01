@@ -1,4 +1,5 @@
 ﻿@page
+@model With.ASP.NET.RazorPages.Pages.IndexModel
 @{
     ViewData["Title"] = "Home page";
 }
@@ -26,3 +27,7 @@
         <a href="@Url.PageLink("/Examples/LazyLoadingWithSkeleton/Index")">LazyLoading with skeleton</a>
     </li>
 </ul>
+<hr/>
+<a href="#" hx-post="@Url.PageLink("Index")" hx-swap="outerHTML">Reset all db data</a>
+
+<partial name="_AntiForgery" />
