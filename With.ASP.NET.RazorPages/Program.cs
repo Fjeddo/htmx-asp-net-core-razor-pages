@@ -1,7 +1,12 @@
+using With.ASP.NET.RazorPages;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+// SignalR
+builder.Services.AddSignalR();
 
 var app = builder.Build();
 
@@ -21,6 +26,10 @@ app.UseAuthorization();
 
 app.MapStaticAssets();
 app.MapRazorPages()
-   .WithStaticAssets();
+    .WithStaticAssets();
+
+// SignalR
+app.MapHub<MessageHub>("/messagehub");
+   
 
 app.Run();

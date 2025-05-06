@@ -1,0 +1,8 @@
+﻿@model (string message, bool includeOob, DateTimeOffset serverTime)
+
+<div id="latest-msg">@Model.message</div>
+
+@if (Model.includeOob)
+{
+    <div style="float:right;" id="server-time" hx-swap-oob="true">@Model.serverTime</div>
+}

@@ -1,18 +1,23 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>@ViewData["Title"] - With.ASP.NET.RazorPages</title>
-        <script src="https://unpkg.com/htmx.org@@1.9.2" defer></script>
-    </head>
-    <body>
-        <div class="container">
-            <main role="main" class="p-3">
-                <a href="~/">Home</a>
-                <hr/>
-                @RenderBody()
-            </main>
-        </div>
-    </body>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - With.ASP.NET.RazorPages</title>
+
+    <script src="~/js/signalr.js"></script>
+    <script src="https://unpkg.com/htmx.org@2.0.4"></script>
+    <script src="~/js/hx-signalR.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <main role="main" class="p-3">
+            <a href="~/">Home</a>
+            <div style="float:right;" id="server-time"></div>
+            <hr />
+            @RenderBody()
+        </main>
+    </div>
+</body>
 </html>
