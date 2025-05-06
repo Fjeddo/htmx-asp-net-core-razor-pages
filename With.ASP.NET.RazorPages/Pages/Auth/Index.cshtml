@@ -1,0 +1,17 @@
+﻿@page
+
+@if (!User.Identity?.IsAuthenticated ?? false)
+{
+    <p>
+        <a href="@Url.PageLink("/Auth/Login")">Login</a>
+    </p>
+}
+else
+{
+    <p>You are logged in!</p>
+}
+<hr/>
+
+<div>
+    <a href="" hx-get="@Url.Page("/Auth/AccountInfo")">Info</a>
+</div>

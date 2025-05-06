@@ -1,18 +1,22 @@
 ﻿@page
 @model With.ASP.NET.RazorPages.Pages.SignalR.IndexModel
 
-<div style="float:right;"><img src="images/url.png" /></div>
-
 @await Html.PartialAsync("_Form")
 
 <hr />
 
-<div hx-ext="signalr" 
-     signalr-connect="/messagehub" 
+<div hx-ext="signalr"
+     signalr-connect="/messagehub"
      signalr-subscribe="spam">
+
     @await Html.PartialAsync("_Message", ("[None]", false, DateTimeOffset.Now))
+
 </div>
 
 <hr />
 
 <partial name="_AntiForgery" />
+
+<div style="display:table; margin-right:auto; margin-left:auto;">
+    <img src="images/url.png" alt="The url"/>
+</div>

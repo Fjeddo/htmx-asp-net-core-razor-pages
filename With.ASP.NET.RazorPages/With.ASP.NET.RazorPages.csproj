@@ -4,11 +4,15 @@
 		<TargetFramework>net9.0</TargetFramework>
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
+		<UserSecretsId>0bb50cae-cd17-4481-8db2-49e7cc15880d</UserSecretsId>
 	</PropertyGroup>
 
 	<ItemGroup>
 		<PackageReference Include="Htmx" Version="1.8.1" />
 		<PackageReference Include="Htmx.TagHelpers" Version="1.8.1" />
+
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="9.0.4" />
+		<PackageReference Include="Microsoft.Identity.Web.UI" Version="3.8.4" />
 	</ItemGroup>
 
 </Project>
