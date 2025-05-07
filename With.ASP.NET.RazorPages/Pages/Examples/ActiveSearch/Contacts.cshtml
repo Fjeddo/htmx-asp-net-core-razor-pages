@@ -1,0 +1,16 @@
+﻿@model With.ASP.NET.RazorPages.Pages.Examples.ActiveSearch.Data.Person[]
+@{
+    Layout = null;
+}
+
+@if (Model.Length == 0)
+{
+    <tr><td colspan="3">No match...</td></tr>
+}
+else
+{
+    foreach (var person in Model)
+    {
+        <tr><td>@person.FirstName</td><td>@person.LastName</td><td>@person.Email</td></tr>
+    }
+}
