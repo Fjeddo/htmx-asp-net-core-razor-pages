@@ -1,0 +1,19 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<script src="https://unpkg.com/htmx.org@2.0.4"></script>
+
+<div class="text-center">
+    <h1 class="display-4" hx-get="@Url.Page("Index", "Orebro")">Hello Örebro</h1>
+
+    <h1 class="display-4">Hello Stockholm</h1>
+
+    <h1 class="display-4">Hello Tokyo</h1>
+
+    <h1 class="display-4">Hello Sydney</h1>
+
+    <h1 class="display-4">Hello Las Vegas</h1>
+</div>
