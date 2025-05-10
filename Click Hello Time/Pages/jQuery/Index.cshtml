@@ -1,0 +1,27 @@
+﻿@page
+@model IndexModel
+
+@*
+    rel notes: https://blog.jquery.com/2011/11/03/jquery-1-7-released/
+*@
+
+<script src="https://code.jquery.com/jquery-1.7.min.js"></script>
+
+<div class="text-center">
+    <h1 class="display-4 clickable" data-url="@Url.Page("Index", "Orebro")">Hello Örebro</h1>
+
+    <h1 class="display-4">Hello Stockholm</h1>
+
+    <h1 class="display-4">Hello Tokyo</h1>
+
+    <h1 class="display-4">Hello Sydney</h1>
+
+    <h1 class="display-4">Hello Las Vegas</h1>
+</div>
+
+<script type="text/javascript">
+    $("h1.clickable").on("click", function() {
+        let url = $(this).attr('data-url');
+        $(this).load(url);
+    });
+</script>
