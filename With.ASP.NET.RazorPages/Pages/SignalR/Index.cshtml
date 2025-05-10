@@ -1,7 +1,16 @@
 ﻿@page
 @model With.ASP.NET.RazorPages.Pages.SignalR.IndexModel
 
-@await Html.PartialAsync("_Form")
+<form
+
+    hx-post="@Url.Page("Index")"
+    hx-swap="none"
+    hx-on::after-request="if(event.detail.successful) this.reset()">
+
+    <input type="text" name="msg"/>
+    <button type="submit">Send</button>
+
+</form>
 
 <hr />
 
@@ -9,7 +18,7 @@
      signalr-connect="/messagehub"
      signalr-subscribe="spam">
 
-    @await Html.PartialAsync("_Message", ("[None]", false, DateTimeOffset.Now))
+    @await Html.PartialAsync("_Message", ("[None]", false, DateTimeOffset.MinValue))
 
 </div>
 

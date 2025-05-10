@@ -34,7 +34,7 @@ public class IndexModel : PageModel
 
         await _messageHubContext.Clients.All.SendAsync("spam", html);
 
-        return Partial("_Form");
+        return new OkResult();
     }
 
 
