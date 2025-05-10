@@ -1,7 +1,7 @@
 ﻿@page "{id=1}" 
 
 <div hx-trigger="load"
-     hx-get="@Url.PageLink("Contact", values: new {id = Request.RouteValues["id"]})"
+     hx-get="@Url.Page("Contact", values: new {id = Request.RouteValues["id"]})"
      hx-swap="outerHTML">
 </div>
 

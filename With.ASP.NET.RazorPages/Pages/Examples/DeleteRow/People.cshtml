@@ -16,7 +16,7 @@
             <td>@person.Email</td>
             <td>@person.Status</td>
             <td>
-                <button hx-delete="@Url.PageLink("People", values: new { id=person.Id })">
+                    <button hx-delete="@Url.Page("People", values: new { id=person.Id })">
                     Delete
                 </button>
             </td>

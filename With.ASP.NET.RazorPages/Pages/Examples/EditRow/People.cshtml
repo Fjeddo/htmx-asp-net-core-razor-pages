@@ -42,17 +42,17 @@
 
             <tr class="editing"
                 hx-trigger="cancel"
-                hx-get="@Url.PageLink("People", values: new {id = contact.Id})">
+                hx-get="@Url.Page("People", values: new {id = contact.Id})">
 
                 <td><input name="name" value="@contact.Name"></td>
                 <td><input name="email" value="@contact.Email"></td>
                 <td>
                     <button class="btn danger"
-                            hx-get="@Url.PageLink("People", values: new {id = contact.Id})">
+                            hx-get="@Url.Page("People", values: new {id = contact.Id})">
                         Cancel
                     </button>
                     <button class="btn danger"
-                            hx-put="@Url.PageLink("People", values: new {id = contact.Id})"
+                            hx-put="@Url.Page("People", values: new {id = contact.Id})"
                             hx-include="closest tr">
                         Save
                     </button>

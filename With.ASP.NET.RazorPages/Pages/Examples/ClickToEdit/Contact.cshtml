@@ -15,7 +15,7 @@
             <div><label>Last Name</label>: @Model.ContactInfo.LastName</div>
             <div><label>Email</label>: @Model.ContactInfo.Email</div>
 
-            <button hx-get="@Url.PageLink("Contact", values: new {id = Model.ContactInfo.ID, action = "edit"})">
+            <button hx-get="@Url.Page("Contact", values: new {id = Model.ContactInfo.ID, action = "edit"})">
                 Click To Edit
             </button>
 
@@ -23,7 +23,7 @@
         break;
 
     case "edit":
-        <form hx-put="@Url.PageLink("Contact", values: new {id = Model.ContactInfo!.ID, action = "view"})"
+        <form hx-put="@Url.Page("Contact", values: new {id = Model.ContactInfo!.ID, action = "view"})"
               hx-swap="outerHTML"
               hx-target="this">
 
@@ -43,7 +43,7 @@
             <input type="hidden" name="id" value="@Model.ContactInfo?.ID">
 
             <button type="submit">Submit</button>
-            <button hx-get="@Url.PageLink("Contact", values: new {id = Model.ContactInfo!.ID, action = "view"})">Cancel</button>
+            <button hx-get="@Url.Page("Contact", values: new {id = Model.ContactInfo!.ID, action = "view"})">Cancel</button>
 
         </form>
         break;

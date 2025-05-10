@@ -3,7 +3,7 @@
 @if (!User.Identity?.IsAuthenticated ?? false)
 {
     <p>
-        <a href="@Url.PageLink("/Auth/Login")">Login</a>
+        <a href="@Url.Page("/Auth/Login")">Login</a>
     </p>
 }
 else
