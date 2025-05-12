@@ -1,0 +1,32 @@
+﻿@page
+@model ResponseTargetsModel
+
+<style type="text/css">
+    p {
+        border: 1px solid grey;
+        margin: 10px;
+        height: 26px;
+    }
+    marquee {
+        background: yellow;
+        height: 24px;
+    }
+</style>
+
+<script src="https://unpkg.com/htmx.org@2.0.4"></script>
+<script src="https://unpkg.com/htmx-ext-response-targets@2.0.2"></script>
+
+<div class="text-center" hx-ext="response-targets">
+    <h1 class="display-4" hx-get="@Url.Page("ResponseTargets", values: new { status = 404 })" hx-swap="innerHTML" hx-target-404="#response-404">404</h1>
+    
+    <h1 class="display-4" hx-get="@Url.Page("ResponseTargets", values: new { status = 203 })" hx-swap="innerHTML" hx-target-203="#response-203">203</h1>
+    
+    <h1 class="display-4" hx-get="@Url.Page("ResponseTargets", values: new { status = 500 })" hx-swap="innerHTML" hx-target-500="#response-500">500</h1>
+    
+    <h1 class="display-4" hx-get="@Url.Page("ResponseTargets", values: new { status = 418 })" hx-swap="innerHTML" hx-target-error="#response-error">418</h1>
+
+    <p id="response-404">Target 404</p>
+    <p id="response-203">Target 203</p>
+    <p id="response-500">Target 500</p>
+    <p id="response-error">Target error</p>
+</div>
