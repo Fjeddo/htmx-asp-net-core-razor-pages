@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Click Hello Time", "Click H
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples from htmx.org", "Examples from htmx.org", "{77EFF951-67C2-4C45-B7B0-4754A67BACB6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadingList", "ReadingList\ReadingList.csproj", "{0CD6F638-58BB-4353-99F9-86290D2FC61A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{CD74D0A3-B186-48FE-9AD3-FEB2A1583D12}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD74D0A3-B186-48FE-9AD3-FEB2A1583D12}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CD74D0A3-B186-48FE-9AD3-FEB2A1583D12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CD6F638-58BB-4353-99F9-86290D2FC61A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CD6F638-58BB-4353-99F9-86290D2FC61A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CD6F638-58BB-4353-99F9-86290D2FC61A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CD6F638-58BB-4353-99F9-86290D2FC61A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
