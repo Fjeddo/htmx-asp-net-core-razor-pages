@@ -1,0 +1,19 @@
+﻿@model Book
+
+<form hx-put="@Url.Page("Index", new {id = Model.id})" 
+      hx-target="closest li" 
+      hx-swap="outerHTML">
+
+    <input name="title"
+           placeholder="title"
+           type="text"
+           value="@Model.title"/>
+
+    <input name="author"
+           placeholder="author"
+           type="text"
+           value="@Model.author"/>
+
+    <button>Confirm</button>
+
+</form>

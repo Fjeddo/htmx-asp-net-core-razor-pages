@@ -1,21 +1,22 @@
 ﻿@model Book
 
 <li data-id="@Model.id">
-    <div 
-        class="details" 
-        hx-get="@Url.Page("Index", "Edit", values: new { Model.id})"
-        @* hx-get="/books/edit/${book.id}" *@
-        hx-target="closest li"
-    >
+
+    <div
+        class="details"
+        hx-get="@Url.Page("Index", "Edit", values: new {Model.id})"
+        hx-target="closest li">
+
         <h3>@Model.title</h3>
         <p>@Model.author</p>
+
     </div>
+
     <button
-        hx-delete="@Url.Page("Index", values: new { id = Model.id})" 
-        @* hx-delete="/books/${book.id}"  *@
-        hx-target="closest li" 
-        hx-swap="outerHTML"
-    >Delete
+        hx-delete="@Url.Page("Index", values: new {id = Model.id})"
+        hx-target="closest li"
+        hx-swap="outerHTML">
+        Delete
     </button>
-    
+
 </li>
