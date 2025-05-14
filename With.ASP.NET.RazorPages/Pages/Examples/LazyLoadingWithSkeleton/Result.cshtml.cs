@@ -1,12 +1,8 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace With.ASP.NET.RazorPages.Pages.Examples.LazyLoadingWithSkeleton
+namespace With.ASP.NET.RazorPages.Pages.Examples.LazyLoadingWithSkeleton;
+
+public class ResultModel : PageModel
 {
-    public class ResultModel : PageModel
-    {
-        public async Task OnGet()
-        {
-            await Task.Delay(3000);
-        }
-    }
+    public async Task OnGet() => await Task.Delay(3000);
 }

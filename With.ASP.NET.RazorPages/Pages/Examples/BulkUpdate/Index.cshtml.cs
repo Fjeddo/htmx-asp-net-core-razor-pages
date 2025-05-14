@@ -1,11 +1,11 @@
-using Htmx;
+﻿using Htmx;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using With.ASP.NET.RazorPages.Pages.Examples.BulkUpdate.Data;
 
 namespace With.ASP.NET.RazorPages.Pages.Examples.BulkUpdate;
 
-public class ContactsModel : PageModel
+public class IndexModel : PageModel
 {
     public List<Contact> Contacts { get; set; } = Db.Contacts;
 

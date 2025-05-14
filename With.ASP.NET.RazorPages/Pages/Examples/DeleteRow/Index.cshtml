@@ -1,8 +1,32 @@
 ﻿@page
+@model With.ASP.NET.RazorPages.Pages.Examples.DeleteRow.IndexModel
 
-<div hx-trigger="load"
-     hx-get="@Url.Page("People")"
-     hx-swap="outerHTML">
-</div>
+<table>
+    <thead>
+    <tr><th>Name</th><th>Email</th><th>ID</th></tr>
+    </thead>
+    <tbody hx-confirm="Are you sure?" hx-target="closest tr" hx-swap="outerHTML swap:1s">
+    @foreach (var person in Model.People)
+    {
+        <tr>
+            <td>@person.Name</td>
+            <td>@person.Email</td>
+            <td>@person.Status</td>
+            <td>
+                <button hx-delete="@Url.Page("Index", values: new { id=person.Id })">
+                    Delete
+                </button>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+<style type="text/css">
+    tr.htmx-swapping td {
+        opacity: 0;
+        transition: opacity 1s ease-out;
+    }
+</style>
 
 <partial name="_AntiForgery"/>

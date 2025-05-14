@@ -5,11 +5,11 @@
     <tr><td>@agent.Name</td><td>@agent.Email</td><td>@agent.ID</td></tr>
 }
 
-<tr id="replaceMe">
-    <td colspan="3"
-        hx-get="@Url.Page("Agents", values: new {currentPage = Model.Page + 1})"
-        hx-target="#replaceMe"
-        hx-trigger="revealed"
-        hx-swap="outerHTML">
-    </td>
-</tr>
+    <tr id="replaceMe">
+        <td colspan="3"
+            hx-get="@Url.Page("Index", values: new {currentPage = Model.Page + 1})"
+            hx-target="#replaceMe"
+            hx-trigger="revealed"
+            hx-swap="outerHTML">
+        </td>
+    </tr>

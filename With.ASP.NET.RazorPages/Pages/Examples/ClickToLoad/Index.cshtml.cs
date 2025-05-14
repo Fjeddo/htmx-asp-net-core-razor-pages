@@ -1,14 +1,14 @@
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using With.ASP.NET.RazorPages.Pages.Examples.ScrollToLoad.Data;
+using With.ASP.NET.RazorPages.Pages.Examples.ClickToLoad.Data;
 
-namespace With.ASP.NET.RazorPages.Pages.Examples.ScrollToLoad;
+namespace With.ASP.NET.RazorPages.Pages.Examples.ClickToLoad;
 
-public class AgentsModel : PageModel
+public class IndexModel : PageModel
 {
     public Agent[] InitialAgents { get; private set; } = [];
 
-    public async Task<IActionResult> OnGet(int currentPage)
+    public IActionResult OnGet(int currentPage)
     {
         if (currentPage == 0)
         {
@@ -16,7 +16,6 @@ public class AgentsModel : PageModel
             return Page();
         }
 
-        await Task.Delay(2000);
         return Partial("_PagedAgents", (Agents: Agent.GetAgents(currentPage), Page: currentPage));
     }
 }
