@@ -1,0 +1,14 @@
+﻿@model With.ASP.NET.RazorPages.Pages.Examples.ClickToEdit.Data.ContactInfo
+
+<div hx-swap="outerHTML"
+     hx-target="this">
+
+    <div><label>First Name</label>: @Model.FirstName</div>
+    <div><label>Last Name</label>: @Model.LastName</div>
+    <div><label>Email</label>: @Model.Email</div>
+
+    <button hx-get="@Url.PageLink("Index", "Edit", values: new { id = Model.ID })">
+        Click To Edit
+    </button>
+
+</div>
