@@ -4,7 +4,7 @@
     <td>@Model.Name</td>
     <td>@Model.Email</td>
     <td>
-        <button hx-get="@Url.PageLink("People", values: new {id = Model.Id, action = "edit"})"
+        <button hx-get="@Url.PageLink("Index", "Edit", values: new { id = Model.Id })"
                 hx-trigger="edit"
                 onclick="confirmEdit(this)">
             Edit

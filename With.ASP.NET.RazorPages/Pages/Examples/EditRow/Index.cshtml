@@ -1,9 +1,25 @@
-﻿@page
+﻿@page "{id=-1}/{action=view}"
+@model With.ASP.NET.RazorPages.Pages.Examples.EditRow.IndexModel
+@{
+    var id = int.Parse(Request.RouteValues["id"]!.ToString()!);
+}
 
-<div hx-trigger="load"
-     hx-get="@Url.Page("People")"
-     hx-swap="outerHTML">
-</div>
+<table class="table delete-row-example">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody hx-target="closest tr"
+           hx-swap="outerHTML">
+        @foreach (var contact in Model.People)
+        {
+            @await Html.PartialAsync("_View", contact)
+        }
+    </tbody>
+</table>
 
 <partial name="_AntiForgery" />
 
