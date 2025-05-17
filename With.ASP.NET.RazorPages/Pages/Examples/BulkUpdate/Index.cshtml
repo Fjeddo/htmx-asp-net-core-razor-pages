@@ -1,8 +1,44 @@
 ﻿@page
+@model With.ASP.NET.RazorPages.Pages.Examples.BulkUpdate.IndexModel
 
-<div hx-trigger="load"
-     hx-get="@Url.PageLink("Contacts")"
-     hx-swap="outerHTML">
-</div>
+<form id="checked-contacts"
+      hx-post="@Url.PageLink("Index")"
+      hx-swap="outerHTML settle:3s"
+      hx-target="#toast">
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Active</th>
+        </tr>
+        </thead>
+        <tbody id="tbody">
+        @foreach (var contact in Model.Contacts)
+        {
+            <tr>
+                <td>@contact.Name</td>
+                <td>@contact.Email</td>
+                <td><input type="checkbox" @(contact.Active ? "checked=checked" : "") name="active:@(contact.Email)"></td>
+            </tr>
+        }
+        </tbody>
+    </table>
+    <input type="submit" value="Bulk Update">
+
+    <span id="toast"></span>
+</form>
+
+<style type="text/css">
+    #toast.htmx-settling {
+        opacity: 100;
+    }
+
+    #toast {
+        background: #FC6A03;
+        opacity: 0;
+        transition: opacity 3s ease-out;
+    }
+</style>
 
 <partial name="_AntiForgery" />
