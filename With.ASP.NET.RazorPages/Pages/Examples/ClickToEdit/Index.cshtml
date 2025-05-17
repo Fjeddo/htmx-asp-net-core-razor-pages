@@ -1,8 +1,6 @@
-﻿@page "{id=1}" 
+﻿@page "{id=1}"
+@model With.ASP.NET.RazorPages.Pages.Examples.ClickToEdit.IndexModel
 
-<div hx-trigger="load"
-     hx-get="@Url.PageLink("Contact", values: new {id = Request.RouteValues["id"]})"
-     hx-swap="outerHTML">
-</div>
+@await Html.PartialAsync("_View", Model.ContactInfo)
 
 <partial name="_AntiForgery" />

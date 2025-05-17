@@ -1,0 +1,25 @@
+﻿@model With.ASP.NET.RazorPages.Pages.Examples.ClickToEdit.Data.ContactInfo
+
+<form hx-put="@Url.PageLink("Index", values: new {id = Model.ID})"
+      hx-swap="outerHTML"
+      hx-target="this">
+
+    <div>
+        <label>First Name</label>
+        <input type="text" name="firstName" value="@Model.FirstName">
+    </div>
+    <div class="form-group">
+        <label>Last Name</label>
+        <input type="text" name="lastName" value="@Model.LastName">
+    </div>
+    <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" name="email" value="@Model.Email">
+    </div>
+    
+    <input type="hidden" name="id" value="@Model.ID"/>
+
+    <button type="submit">Submit</button>
+    <button hx-get="@Url.PageLink("Index", "View", values: new { id = Model.ID })">Cancel</button>
+
+</form>
