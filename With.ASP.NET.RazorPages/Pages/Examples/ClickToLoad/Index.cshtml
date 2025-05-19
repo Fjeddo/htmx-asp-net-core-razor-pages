@@ -1,6 +1,11 @@
-﻿@page
+﻿@page "{currentPage=0}"
+@model With.ASP.NET.RazorPages.Pages.Examples.ClickToLoad.IndexModel
 
-<div hx-trigger="load"
-     hx-get="@Url.PageLink("Agents")"
-     hx-swap="outerHTML">
-</div>
+<table>
+    <thead>
+    <tr><th>Name</th><th>Email</th><th>ID</th></tr>
+    </thead>
+    <tbody>
+    @await Html.PartialAsync("_PagedAgents", (Model.InitialAgents, 0))
+    </tbody>
+</table>
