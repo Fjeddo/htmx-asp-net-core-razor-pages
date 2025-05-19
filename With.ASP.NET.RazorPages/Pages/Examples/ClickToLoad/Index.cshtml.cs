@@ -4,7 +4,7 @@ using With.ASP.NET.RazorPages.Pages.Examples.ClickToLoad.Data;
 
 namespace With.ASP.NET.RazorPages.Pages.Examples.ClickToLoad;
 
-public class AgentsModel : PageModel
+public class IndexModel : PageModel
 {
     public Agent[] InitialAgents { get; private set; } = [];
 
